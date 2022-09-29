@@ -17,6 +17,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeRepository employeeRepository;
 
     @Override
+    public boolean deleteEmployee(Long id) {
+        EmployeeEntity employee = employeeRepository.findById(id).get();
+        employeeRepository.delete(employee);
+        return true;
+    }
+
+    @Override
     public List<Employee> getAllEmployees() {
         List<EmployeeEntity> employeeEntities = employeeRepository.findAll();
 
