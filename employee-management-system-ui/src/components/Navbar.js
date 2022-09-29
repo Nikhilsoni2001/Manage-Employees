@@ -1,10 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-gray-800">
       <div className="h-16 flex items-center">
-        <p className="text-white px-8 font-bold">Employee Management System</p>
+        <p
+          onClick={() => navigate('/')}
+          className="text-white px-8 font-bold cursor-pointer"
+        >
+          Employee Management System
+        </p>
       </div>
     </div>
   );
